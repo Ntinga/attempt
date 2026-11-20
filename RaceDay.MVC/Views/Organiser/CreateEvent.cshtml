@@ -1,0 +1,97 @@
+﻿@model RaceDay.MVC.Models.EventCreateViewModel
+
+@{
+    ViewData["Title"] = "Create Event";
+}
+
+<div class="container mt-4">
+
+    <h2>Create Event</h2>
+
+    <form asp-action="CreateEvent"
+          method="post"
+          enctype="multipart/form-data">
+        <div asp-validation-summary="All"
+             class="text-danger">
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="EventName"
+                   class="form-label"></label>
+
+            <input asp-for="EventName"
+                   class="form-control" />
+
+
+            <span asp-validation-for="EventName"
+                  class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Description"
+                   class="form-label"></label>
+
+            <textarea asp-for="Description"
+                      class="form-control"
+                      rows="4"></textarea>
+
+            <span asp-validation-for="Description"
+                  class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="EventDate"
+                   class="form-label"></label>
+
+            <input asp-for="EventDate"
+                   type="date"
+                   class="form-control" />
+
+            <span asp-validation-for="EventDate"
+                  class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Location"
+                   class="form-label"></label>
+
+            <input asp-for="Location"
+                   class="form-control" />
+
+            <span asp-validation-for="Location"
+                  class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="BannerImage"
+                   class="form-label">
+                Event Banner
+            </label>
+
+            <input asp-for="BannerImage"
+                   type="file"
+                   class="form-control" />
+        </div>
+
+        <button type="submit"
+                class="btn btn-success">
+
+            Create Event
+
+        </button>
+
+        <a asp-action="Dashboard"
+           class="btn btn-secondary">
+
+            Cancel
+
+        </a>
+
+    </form>
+
+</div>
+
+@section Scripts
+{
+    <partial name="_ValidationScriptsPartial" />
+}

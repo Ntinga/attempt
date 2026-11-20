@@ -1,0 +1,17 @@
+/.vs
+/RaceDay.MVC/obj
+/RaceDay.MVC/bin/Debug/net10.0
+[Bb]in/
+[Oo]bj/
+*.user
+*.userosscache
+*.sln.docstates
+.vs/
+/src/RaceDay.API/bin/Debug/net10.0/RaceDay.API.dll
+/src/RaceDay.API/bin/Debug/net10.0/RaceDay.API.exe
+/src/RaceDay.API/bin/Debug/net10.0/RaceDay.API.pdb
+/tests/RaceDay.API.Tests/bin/Debug/net10.0/RaceDay.API.dll
+/tests/RaceDay.API.Tests/bin/Debug/net10.0/RaceDay.API.exe
+/tests/RaceDay.API.Tests/bin/Debug/net10.0/RaceDay.API.pdb
+/tests/RaceDay.API.Tests/bin/Debug/net10.0/RaceDay.API.Tests.dll
+/tests/RaceDay.API.Tests/bin/Debug/net10.0/RaceDay.API.Tests.pdb

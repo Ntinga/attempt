@@ -1,0 +1,19 @@
+name: Validate Repository Structure
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch: ###added by MAI
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Check Required Files
+        run: |
+          test -f docs/erd-diagram.png || exit 1
+          test -f docs/api-endpoint-plan.md || exit 1
+          test -f docs/database-script.sql || exit 1

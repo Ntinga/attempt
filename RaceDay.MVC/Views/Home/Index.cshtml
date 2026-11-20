@@ -1,0 +1,85 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+<section class="raceday-hero p-4 p-md-5 mb-4 shadow">
+    <div class="row align-items-center">
+        <div class="col-lg-8">
+            <span class="badge bg-warning text-dark fw-semibold mb-2 px-3 py-2">
+                <i class="bi bi-lightning-charge-fill me-1"></i>OFFICIAL RACE PORTAL
+            </span>
+            <h1 class="display-5 fw-bold mb-3">Track Every Mile. Compete With Purpose.</h1>
+            <p class="lead text-white-50 mb-4">
+                Browse upcoming road races, trail challenges, and endurance events, manage your athlete enrolments,
+                and inspect verified finish times and podium standings.
+            </p>
+            <div class="d-flex flex-wrap gap-2">
+                <a asp-controller="Events" asp-action="Index" class="btn btn-warning btn-lg fw-semibold text-dark px-4">
+                    <i class="bi bi-calendar-event me-2"></i>Explore Events
+                </a>
+                <a asp-controller="Results" asp-action="Index" class="btn btn-outline-light btn-lg px-4">
+                    <i class="bi bi-trophy me-2"></i>View Race Results
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-4 d-none d-lg-flex justify-content-center">
+            <div class="text-center p-4 rounded-circle border border-warning border-opacity-50" style="width: 190px; height: 190px; display: flex; flex-direction: column; justify-content: center;">
+                <i class="bi bi-stopwatch text-warning" style="font-size: 3.5rem;"></i>
+                <span class="fw-bold text-uppercase small tracking-wide mt-1">RaceDay Live</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="row g-4">
+    <div class="col-md-4">
+        <div class="card h-100 shadow-sm raceday-card">
+            <div class="card-body p-4">
+                <div class="d-inline-flex align-items-center justify-content-center bg-warning bg-opacity-25 text-dark rounded-3 p-3 mb-3">
+                    <i class="bi bi-flag-fill fs-4"></i>
+                </div>
+                <h5 class="card-title fw-bold">Upcoming Events</h5>
+                <p class="card-text text-muted">
+                    Discover scheduled races with distances, locations, entry capacities, and real-time registration status.
+                </p>
+                <a asp-controller="Events" asp-action="Index" class="btn btn-sm btn-outline-dark fw-semibold">
+                    Browse Schedule <i class="bi bi-arrow-right ms-1"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card h-100 shadow-sm raceday-card">
+            <div class="card-body p-4">
+                <div class="d-inline-flex align-items-center justify-content-center bg-warning bg-opacity-25 text-dark rounded-3 p-3 mb-3">
+                    <i class="bi bi-person-badge-fill fs-4"></i>
+                </div>
+                <h5 class="card-title fw-bold">Athlete Enrolments</h5>
+                <p class="card-text text-muted">
+                    Register for open events, track your confirmed entries, and manage withdrawals before race day.
+                </p>
+                <a asp-controller="Enrolments" asp-action="Index" class="btn btn-sm btn-outline-dark fw-semibold">
+                    Manage Entries <i class="bi bi-arrow-right ms-1"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card h-100 shadow-sm raceday-card">
+            <div class="card-body p-4">
+                <div class="d-inline-flex align-items-center justify-content-center bg-warning bg-opacity-25 text-dark rounded-3 p-3 mb-3">
+                    <i class="bi bi-award-fill fs-4"></i>
+                </div>
+                <h5 class="card-title fw-bold">Official Results</h5>
+                <p class="card-text text-muted">
+                    Review recorded finish times, positions, and category rankings published by race officials.
+                </p>
+                <a asp-controller="Results" asp-action="Index" class="btn btn-sm btn-outline-dark fw-semibold">
+                    Check Leaderboard <i class="bi bi-arrow-right ms-1"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

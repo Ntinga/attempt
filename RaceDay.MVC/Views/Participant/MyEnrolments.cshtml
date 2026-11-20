@@ -1,0 +1,54 @@
+﻿@model IEnumerable<RaceDay.MVC.Models.EnrolmentViewModel>
+
+<div class="container mt-4">
+
+    <h2>My Enrolments</h2>
+
+    <table class="table table-striped">
+
+        <thead>
+            <tr>
+                <th>Event</th>
+                <th>Category</th>
+                <th>Date</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            @foreach (var enrolment in Model)
+            {
+                <tr>
+
+                    <td>
+                        @enrolment.EventName
+                    </td>
+
+                    <td>
+                        @enrolment.CategoryName
+                    </td>
+
+                    <td>
+                        @enrolment.EventDate.ToShortDateString()
+                    </td>
+
+                    <td>
+
+                        <span
+                            class="badge bg-success">
+
+                            Confirmed
+
+                        </span>
+
+                    </td>
+
+                </tr>
+            }
+
+        </tbody>
+
+    </table>
+
+</div>

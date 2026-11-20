@@ -1,0 +1,109 @@
+﻿@model IEnumerable<RaceDay.MVC.Models.EventDto>
+
+@{
+    ViewData["Title"] = "Browse Events";
+}
+
+<div class="container mt-4">
+
+    <h2 class="mb-4">Upcoming Events</h2>
+
+    <!-- FILTER FORM -->
+
+    <form method="get">
+
+        <div class="row mb-4">
+
+            <div class="col-md-6">
+                <input
+                    type="text"
+                    name="searchTerm"
+                    class="form-control"
+                    placeholder="Search events" />
+            </div>
+
+            <div class="col-md-4">
+                <input
+                    type="number"
+                    name="distanceKm"
+                    class="form-control"
+                    placeholder="Distance (KM)" />
+            </div>
+
+            <div class="col-md-2">
+                <button
+                    type="submit"
+                    class="btn btn-primary w-100">
+                    Filter
+                </button>
+            </div>
+
+        </div>
+
+    </form>
+
+    <!-- EVENT CARDS -->
+
+    <div class="row">
+
+        @if (!Model.Any())
+        {
+            <div class="col-12">
+                <div class="alert alert-info">
+                    No events found.
+                </div>
+            </div>
+        }
+        else
+        {
+            @foreach (var item in Model)
+            {
+                <div class="col-md-4 mb-4">
+
+                    <div class="card shadow-sm h-100">
+
+                        @if (!string.IsNullOrEmpty(item.BannerUrl))
+                        {
+                            <img src="@item.BannerUrl"
+                                 class="card-img-top"
+                                 alt="Banner" />
+                        }
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">
+                                @item.EventName
+                            </h5>
+
+                            <p class="card-text">
+                                @item.Description
+                            </p>
+
+                            <p>
+                                <strong>Date:</strong>
+                                @item.EventDate.ToShortDateString()
+                            </p>
+
+                            <p>
+                                <strong>Location:</strong>
+                                @item.Location
+                            </p>
+
+                            <a asp-controller="Participant"
+                               asp-action="Details"
+                               asp-route-id="@item.EventId"
+                               class="btn btn-success">
+                                View Event
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            }
+        }
+
+    </div>
+
+</div>

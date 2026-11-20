@@ -1,0 +1,57 @@
+﻿@model RaceDay.MVC.Models.CategoryCreateViewModel
+
+<div class="container mt-4">
+
+    <h2>Create Category</h2>
+
+    <form asp-action="CreateCategory"
+          method="post">
+        <div asp-validation-summary="All"
+             class="text-danger">
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="EventId"></label>
+
+            <input asp-for="EventId"
+                   class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="CategoryName"></label>
+
+            <input asp-for="CategoryName"
+                   class="form-control" />
+
+            <span asp-validation-for="CategoryName"
+                  class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Description"></label>
+
+            <textarea asp-for="Description"
+                      class="form-control">
+            </textarea>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="DistanceKM"></label>
+
+            <input asp-for="DistanceKM"
+                   class="form-control" />
+
+            <span asp-validation-for="DistanceKM"
+                  class="text-danger"></span>
+        </div>
+
+        <button type="submit"
+                class="btn btn-success">
+
+            Create Category
+
+        </button>
+
+    </form>
+
+</div>

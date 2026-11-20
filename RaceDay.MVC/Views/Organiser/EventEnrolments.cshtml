@@ -1,0 +1,71 @@
+﻿@model IEnumerable<dynamic>
+
+<div class="container mt-4">
+
+    <h2>Event Enrolments</h2>
+
+    <table class="table table-striped">
+
+        <thead>
+
+            <tr>
+                <th>Participant</th>
+                <th>Event</th>
+                <th>Category</th>
+                <th>Date</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            @foreach (var enrolment in Model)
+            {
+                <tr>
+
+                    <td>
+                        @enrolment.Participant.FullName
+                    </td>
+
+                    <td>
+                        @enrolment.Category.Event.EventName
+                    </td>
+
+                    <td>
+                        @enrolment.Category.CategoryName
+                    </td>
+
+                    <td>
+                        @enrolment.EnrolmentDate
+                    </td>
+
+                    <td>
+
+                        <span class="badge bg-success">
+                            Confirmed
+                        </span>
+
+                    </td>
+
+                    <td>
+
+                        <a asp-action="EnterResult"
+                           asp-route-enrolmentId="@enrolment.EnrolmentId"
+                           class="btn btn-primary btn-sm">
+
+                            Enter Result
+
+                        </a>
+
+                    </td>
+
+                </tr>
+            }
+
+        </tbody>
+
+    </table>
+
+</div>

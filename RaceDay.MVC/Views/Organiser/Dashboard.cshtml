@@ -1,0 +1,111 @@
+﻿@model RaceDay.MVC.Models.DashboardViewModel
+
+<div class="container mt-4">
+
+    <h2>Organiser Dashboard</h2>
+
+    <a asp-action="CreateEvent"
+       class="btn btn-primary mb-3">
+
+        Create New Event
+
+    </a>
+
+    <a asp-action="ManageCategories"
+       class="btn btn-secondary">
+
+        Manage Categories
+
+    </a>
+
+    <a asp-action="EventEnrolments"
+       class="btn btn-info ms-2">
+
+        View Enrolments & Results
+
+    </a>
+
+    <div class="row mb-4">
+
+        <div class="col-md-6">
+
+            <div class="card text-center">
+
+                <div class="card-body">
+
+                    <h3>
+                        @Model.TotalEvents
+                    </h3>
+
+                    <p>
+                        Events Created
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-6">
+
+            <div class="card text-center">
+
+                <div class="card-body">
+
+                    <h3>
+                        @Model.TotalEnrolments
+                    </h3>
+
+                    <p>
+                        Total Enrolments
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <h3>Upcoming Events</h3>
+
+    <table class="table">
+
+        <thead>
+
+            <tr>
+                <th>Event</th>
+                <th>Date</th>
+                <th>Location</th>
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+        @foreach(var raceEvent in Model.UpcomingEvents)
+        {
+            <tr>
+
+                <td>
+                    @raceEvent.EventName
+                </td>
+
+                <td>
+                    @raceEvent.EventDate.ToShortDateString()
+                </td>
+
+                <td>
+                    @raceEvent.Location
+                </td>
+
+            </tr>
+        }
+
+        </tbody>
+
+    </table>
+
+</div>
